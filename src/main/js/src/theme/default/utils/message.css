@@ -1,0 +1,29 @@
+#msgbox {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.ui-message {
+  margin: 0 auto 5px auto;
+  padding: 10px;
+  width: 50%;
+  max-width: 320px;
+  min-width: 240px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.ui-message .message {
+  text-align: center;
+}
+
+.ui-message-success {
+  background-color: #DFF0D8;
+  color: #3C763D;
+}
+.ui-message-danger {
+  background-color: #F2DEDE;
+  color: #A94442;
+}

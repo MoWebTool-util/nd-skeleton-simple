@@ -1,0 +1,141 @@
+{
+  "name": "nd-skeleton-simple",
+  "version": "3.0.0",
+  "description": "Social 管理系统",
+  "author": {
+    "name": "crossjs",
+    "email": "liwenfu@crossjs.com"
+  },
+  "scripts": {
+    "clean": "rm -rf ../webapp/*",
+    "compile": "better-npm-run compile",
+    "lint": "eslint --max-warnings 10 .",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "better-npm-run start",
+    "dev:DEVELOPMENT": "npm start -- --ENV=DEVELOPMENT",
+    "dev:DEBUG": "npm start -- --ENV=DEBUG",
+    "dev:PREPRODUCTION": "npm start -- --ENV=PREPRODUCTION",
+    "dev:PRESSURE": "npm start -- --ENV=PRESSURE",
+    "test": "better-npm-run test",
+    "test:dev": "npm test -- --watch",
+    "deploy": "better-npm-run deploy"
+  },
+  "betterScripts": {
+    "compile": {
+      "command": "node .bin/compile",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "app:*"
+      }
+    },
+    "start": {
+      "command": "nodemon .bin/server",
+      "env": {
+        "DEBUG": "app:*"
+      }
+    },
+    "deploy": {
+      "command": "npm run lint && npm run clean && npm run compile",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "app:*"
+      }
+    },
+    "test": {
+      "command": "node ./node_modules/karma/bin/karma start .bin/karma",
+      "env": {
+        "NODE_ENV": "test",
+        "DEBUG": "app:*"
+      }
+    }
+  },
+  "dependencies": {
+    "jquery": "^1.12.3",
+    "nd-browser": "^3.0.0",
+    "nd-datetime": "^3.0.1",
+    "nd-promise": "^3.0.2",
+    "nd-base": "^3.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-es2015-loose": "^7.0.0",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "babel-runtime": "^6.3.19",
+    "better-npm-run": "0.0.5",
+    "bundle-loader": "^0.5.4",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.2.0",
+    "copy-webpack-plugin": "^0.3.3",
+    "css-loader": "^0.23.1",
+    "cssnano": "^3.5.2",
+    "debug": "^2.2.0",
+    "eslint": "^1.10.3",
+    "eslint-config-standard": "^4.4.0",
+    "eslint-loader": "^1.2.1",
+    "eslint-plugin-babel": "^3.0.0",
+    "eslint-plugin-import": "^0.12.1",
+    "eslint-plugin-standard": "^1.3.1",
+    "extend": "^3.0.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "handlebars-loader": "^1.1.4",
+    "html-loader": "^0.4.0",
+    "html-webpack-plugin": "^2.1.0",
+    "isparta-loader": "^2.0.0",
+    "json-loader": "^0.5.4",
+    "karma": "^0.13.8",
+    "karma-coverage": "^0.5.0",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.5",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "koa": "^2.0.0-alpha.3",
+    "koa-bodyparser": "^2.0.1",
+    "koa-connect-history-api-fallback": "^0.3.0",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^1.1.1",
+    "koa-static": "^2.0.0",
+    "map-stream": "0.0.6",
+    "mocha": "^2.2.5",
+    "nodemon": "^1.9.0",
+    "phantomjs-polyfill": "0.0.1",
+    "phantomjs-prebuilt": "^2.1.3",
+    "postcss-browser-reporter": "^0.4.0",
+    "postcss-calc": "^5.2.0",
+    "postcss-color-function": "^2.0.0",
+    "postcss-cssnext": "^2.4.0",
+    "postcss-each": "^0.9.1",
+    "postcss-import": "^8.0.2",
+    "postcss-loader": "^0.8.1",
+    "postcss-mixins": "^4.0.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-reporter": "^1.3.3",
+    "postcss-simple-vars": "^1.2.0",
+    "postcss-sprites": "^3.1.0",
+    "postcss-url": "^5.1.1",
+    "raw-loader": "^0.5.1",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
+    "style-loader": "^0.13.0",
+    "superagent": "^1.8.3",
+    "url-loader": "^0.5.6",
+    "vinyl-fs": "^2.3.1",
+    "webpack": "^1.12.12",
+    "webpack-dev-middleware": "^1.5.1",
+    "webpack-hot-middleware": "^2.6.4",
+    "yargs": "^3.32.0"
+  },
+  "engines": {
+    "node": ">= 5.7.0",
+    "npm": ">= 3.6.0"
+  }
+}
